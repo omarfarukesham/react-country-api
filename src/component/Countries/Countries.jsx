@@ -15,8 +15,9 @@ const Countries = () => {
         <div className="miniComponent">
         {
         cities.map(city => <Country city={city}
-            name={city.name.common}
-             flag={city.flags.png}
+            key={city.cca3}
+            // name={city.name.common}
+            //  flag={city.flags.png}
             //  population={city.population}
              
              ></Country>)
