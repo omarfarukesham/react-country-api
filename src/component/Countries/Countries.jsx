@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from "react";
+import Country from '../CountryDetails/Country';
 import './Countries.css'
 
 const Countries = () => {
@@ -12,18 +13,26 @@ const Countries = () => {
   
     return (
         <div className="miniComponent">
-        {cities.map(city => DetailsCountries(city))}
+        {
+        cities.map(city => <Country city={city}
+            name={city.name.common}
+             flag={city.flags.png}
+            //  population={city.population}
+             
+             ></Country>)
+        
+        }
       </div>
     );
 };
 
-function DetailsCountries(props){
-    return(
-        <div className="info">
-          <h3>CountryName:{props.name.common}</h3>   
-          <img src={props.flags.png} alt="images Flags" />   
-        </div>
-    )
-  }
+// function DetailsCountries(props){
+//     return(
+//         <div className="info">
+//           <h3>CountryName:{props.name.common}</h3>   
+//           <img src={props.flags.png} alt="images Flags" />   
+//         </div>
+//     )
+//   }
 
 export default Countries;
